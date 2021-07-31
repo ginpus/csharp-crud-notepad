@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "csharp-crud-notepad/1.0.0": {
+        "runtime": {
+          "csharp-crud-notepad.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "csharp-crud-notepad/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

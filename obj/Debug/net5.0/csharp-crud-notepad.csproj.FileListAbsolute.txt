@@ -1,0 +1,16 @@
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\obj\Debug\net5.0\csharp-crud-notepad.csproj.AssemblyReference.cache
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\obj\Debug\net5.0\csharp-crud-notepad.GeneratedMSBuildEditorConfig.editorconfig
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\obj\Debug\net5.0\csharp-crud-notepad.AssemblyInfoInputs.cache
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\obj\Debug\net5.0\csharp-crud-notepad.AssemblyInfo.cs
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\obj\Debug\net5.0\csharp-crud-notepad.csproj.CoreCompileInputs.cache
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\bin\Debug\net5.0\csharp-crud-notepad.exe
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\bin\Debug\net5.0\csharp-crud-notepad.deps.json
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\bin\Debug\net5.0\csharp-crud-notepad.runtimeconfig.json
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\bin\Debug\net5.0\csharp-crud-notepad.runtimeconfig.dev.json
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\bin\Debug\net5.0\csharp-crud-notepad.dll
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\bin\Debug\net5.0\ref\csharp-crud-notepad.dll
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\bin\Debug\net5.0\csharp-crud-notepad.pdb
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\obj\Debug\net5.0\csharp-crud-notepad.dll
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\obj\Debug\net5.0\ref\csharp-crud-notepad.dll
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\obj\Debug\net5.0\csharp-crud-notepad.pdb
+F:\Desktop\dotNET\C#\7.28\csharp-crud-notepad\obj\Debug\net5.0\csharp-crud-notepad.genruntimeconfig.cache
