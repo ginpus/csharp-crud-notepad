@@ -10,7 +10,6 @@ namespace csharp_crud_notepad
     internal class Note
     {
         protected int _id;
-        protected int _prevId;
         protected DateTime _date;
         protected string _title;
         protected string _name;
