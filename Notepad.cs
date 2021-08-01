@@ -13,6 +13,7 @@ namespace csharp_crud_notepad
         protected string _fileName;
         protected string[] _savedNotes;
         protected Note _newNote;
+        protected int _maxId;
 
         public Notepad()
         {
@@ -27,14 +28,33 @@ namespace csharp_crud_notepad
         public void ImportNotes() // adding all notes from file into object
         {
             _savedNotes = File.ReadAllLines("notepad.txt");
-            var count = 0;
             foreach (var line in _savedNotes)
             {
-                _notepad.Add(new Note(++count, DateTime.Now, $"{++count}", "two"));
+                string[] temp = line.Split('-'); // each line in text gets separated
+                int tempId = Int32.Parse(temp[0].Trim());
+                DateTime tempDate = DateTime.Parse(temp[1].Trim());
+                Note entry = new Note(tempId, tempDate, temp[2].Trim(), temp[3].Trim()); //values gets assigned to Note constructor
+                _notepad.Add(entry);
             }
         }
 
-        public void PrintNotes() // print all existing notes from file into console
+        public int GetMaxId()
+        {
+            _savedNotes = File.ReadAllLines("notepad.txt");
+            _maxId = 0;
+            foreach (var line in _savedNotes)
+            {
+                string[] temp = line.Split('-'); // each line in text gets separated
+                int tempId = Int32.Parse(temp[0].Trim());
+                if (tempId > _maxId)
+                {
+                    _maxId = tempId;
+                }
+            }
+            return _maxId;
+        }
+
+        public void PrintNotes() // print all existing notes FROM FILE into console
         {
             _savedNotes = File.ReadAllLines("notepad.txt");
             Console.WriteLine("Current notepad entries:");
@@ -42,25 +62,49 @@ namespace csharp_crud_notepad
             {
                 Console.WriteLine(line);
             }
+            Console.WriteLine("------End of notes------");
         }
 
-        public void ShowNotes() // print existent notepad objects into console
+        public void ShowNotes() // print existent notepad objects FROM NOTEPAD OBJECT LIST into console
         {
             foreach (var entry in _notepad)
             {
                 Console.WriteLine(entry.ToString());
             }
+            Console.WriteLine("------End of notes------");
         }
 
         public void InsertNote()
         {
-            Console.WriteLine("Note title:");
+            Console.Write("Note title: ");
             var title = Console.ReadLine();
-            Console.WriteLine("Note text:");
+            Console.Write("Note text: ");
             var name = Console.ReadLine();
-            _newNote = new Note(title, name);
+            _newNote = new Note(GetMaxId() + 1, title, name); // default ID gets assigned as defined in Note constructor
             _notepad.Add(_newNote);
             File.AppendAllLines("notepad.txt", new[] { _newNote.ToString() });
+        }
+
+        public Note GetNoteById(int id) // method to return Note object
+        {
+            foreach (Note note in _notepad)
+            {
+                if (note.GetId() == id)
+                {
+                    return note;
+                }
+            }
+            return null;
+        }
+
+        public void DeleteNote(Note note) // returns the edited list without specific Note (which gets deleted)
+        {
+            _notepad.Remove(note);
+            File.WriteAllText(_fileName, ""); // deletes current contents from the file
+            foreach (var entry in _notepad)
+            {
+                File.AppendAllLines("notepad.txt", new[] { entry.ToString() }); // rewrites all entries to the file
+            }
         }
 
         public void PrintAllSelections()
@@ -68,7 +112,7 @@ namespace csharp_crud_notepad
             var count = 0;
             foreach (var name in Enum.GetNames(typeof(Selection)))
             {
-                Console.WriteLine($"{++count}: {name}");
+                Console.WriteLine($"{++count} - {name}");
             }
         }
     }

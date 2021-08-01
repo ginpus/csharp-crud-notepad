@@ -15,13 +15,9 @@ namespace csharp_crud_notepad
         protected string _title;
         protected string _name;
 
-        public Note(string title, string name)
+        public Note(int id, string title, string name)
         {
-            foreach (var line in File.ReadAllLines("notepad.txt"))
-            {
-                _prevId++;
-            }
-            _id = ++_prevId;
+            _id = id;
             _date = DateTime.Now;
             _title = title;
             _name = name;
@@ -35,9 +31,14 @@ namespace csharp_crud_notepad
             _name = name;
         }
 
+        public int GetId() // returns ID of a note
+        {
+            return (int)_id;
+        }
+
         public override string ToString()
         {
-            return $"{_id} - {_date.ToString("yyyy-MM-dd")} - {_title} - {_name}";
+            return $"{_id} - {_date.ToString("yyyy/MM/dd")} - {_title} - {_name}";
         }
     }
 }

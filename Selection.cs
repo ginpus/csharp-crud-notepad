@@ -8,10 +8,12 @@ namespace csharp_crud_notepad
 {
     internal enum Selection
     {
-        List_all_notes = 1,
+        List_all_saved_notes = 1,
         Add_new_note,
-        Show_note_objects,
-        Show_balance,
+        Show_current_note_objects,
+        Edit_note,
+        Delete_note,
+        Delete_all_notes,
         Exit
     }
 }
