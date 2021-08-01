@@ -4,5 +4,5 @@
 5 - 2021/08/01 - Dar vienas - Per metoda idetas irasas
 6 - 2021/08/01 - Idetas - Po trynimo
 7 - 2021/08/01 - nAUJAS - TEKSTAS
-8 - 2021/08/01 - Entry with max - value
 9 - 2021/08/01 - Dar papildomas - Hahaha
+10 - 2021/08/01 - desimtas - desimtas

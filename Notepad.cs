@@ -74,7 +74,7 @@ namespace csharp_crud_notepad
             Console.WriteLine("------End of notes------");
         }
 
-        public void InsertNote()
+        public void InsertNote() // ID will always be greater than current greatest one. Date will always be creation or modification date
         {
             Console.Write("Note title: ");
             var title = Console.ReadLine();
@@ -104,6 +104,52 @@ namespace csharp_crud_notepad
             foreach (var entry in _notepad)
             {
                 File.AppendAllLines("notepad.txt", new[] { entry.ToString() }); // rewrites all entries to the file
+            }
+        }
+
+        public void EditNote(Note note)
+        {
+            //issaugoti indexa, is kur paimtas irasas
+            _notepad.Remove(note);
+            File.WriteAllText(_fileName, ""); // deletes current contents from the file
+            foreach (var entry in _notepad)
+            {
+                File.AppendAllLines("notepad.txt", new[] { entry.ToString() }); // rewrites all entries to the file
+            }
+        }
+
+        public void DeleteAllNotes()
+        {
+            _notepad = new List<Note> { }; // deletes all entries from the notepad list
+            File.WriteAllText(_fileName, ""); // deletes the file contents
+        }
+
+        public void CreateBackup() // putting all the notes into backup
+        {
+            if (!File.Exists("notepad_backup.txt"))
+            {
+                File.Create("notepad_backup.txt");
+            }
+            File.WriteAllText("notepad_backup.txt", "");
+            foreach (var entry in _notepad)
+            {
+                File.AppendAllLines("notepad_backup.txt", new[] { entry.ToString() });
+            }
+        }
+
+        public void RestoreFromBackup() // adding all notes from file into object
+        {
+            _notepad = new List<Note> { }; // deletes all entries from the notepad list
+            File.WriteAllText(_fileName, ""); // deletes the file contents
+            var restoredNotes = File.ReadAllLines("notepad_backup.txt");
+            foreach (var line in restoredNotes)
+            {
+                string[] temp = line.Split('-'); // each line in text gets separated
+                int tempId = Int32.Parse(temp[0].Trim());
+                DateTime tempDate = DateTime.Parse(temp[1].Trim());
+                Note entry = new Note(tempId, tempDate, temp[2].Trim(), temp[3].Trim()); //values gets assigned to Note constructor
+                _notepad.Add(entry);
+                File.AppendAllLines("notepad.txt", new[] { entry.ToString() });
             }
         }
 

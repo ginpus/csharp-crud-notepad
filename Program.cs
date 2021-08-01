@@ -29,7 +29,6 @@ namespace csharp_crud_notepad
                         break;
 
                     case 2:
-                        Console.WriteLine(notepad.GetMaxId().ToString());
                         notepad.InsertNote();
                         break;
 
@@ -38,6 +37,8 @@ namespace csharp_crud_notepad
                         break;
 
                     case 4:
+                        Console.WriteLine("Current list of notes: ");
+                        notepad.ShowNotes();
                         Console.WriteLine("Select ID of note to edit: ");
                         var input2 = Console.ReadLine();
                         int idEdit = Convert.ToInt32(input2);
@@ -54,8 +55,16 @@ namespace csharp_crud_notepad
                         break;
 
                     case 6:
-                        Console.WriteLine("Delete all notes");
+                        notepad.DeleteAllNotes();
                         break;
+
+                    /*                    case 7:
+                                            notepad.CreateBackup();
+                                            break;
+
+                                        case 8:
+                                            Console.WriteLine("Restoring");
+                                            break;*/
 
                     case 7:
                         Console.WriteLine("Closing notepad. Goodnight.");

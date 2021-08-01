@@ -1,0 +1,17 @@
+1 - 2021/07/29 - Naujas atminimas - Reikia isplauti indus
+2 - 2021/07/29 - Dar vienas atminimas - Reikia isplauti ir grindis
+3 - 2021/07/30 - Ne paskutininis atminimas - Reikia issiplauti galva ir baigti tuos plovimus
+5 - 2021/08/01 - Dar vienas - Per metoda idetas irasas
+6 - 2021/08/01 - Idetas - Po trynimo
+7 - 2021/08/01 - nAUJAS - TEKSTAS
+8 - 2021/08/01 - Entry with max - value
+9 - 2021/08/01 - Dar papildomas - Hahaha
+1 - 2021/07/29 - Naujas atminimas - Reikia isplauti indus
+2 - 2021/07/29 - Dar vienas atminimas - Reikia isplauti ir grindis
+3 - 2021/07/30 - Ne paskutininis atminimas - Reikia issiplauti galva ir baigti tuos plovimus
+5 - 2021/08/01 - Dar vienas - Per metoda idetas irasas
+6 - 2021/08/01 - Idetas - Po trynimo
+7 - 2021/08/01 - nAUJAS - TEKSTAS
+8 - 2021/08/01 - Entry with max - value
+9 - 2021/08/01 - Dar papildomas - Hahaha
+10 - 2021/08/01 - new note - prior to backup
