@@ -42,7 +42,8 @@ namespace csharp_crud_notepad
                         Console.WriteLine("Select ID of note to edit: ");
                         var input2 = Console.ReadLine();
                         int idEdit = Convert.ToInt32(input2);
-                        notepad.GetNoteById(idEdit);
+                        //notepad.GetNoteById(idEdit);
+                        notepad.EditNote(idEdit);
                         break;
 
                     case 5:

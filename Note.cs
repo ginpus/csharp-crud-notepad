@@ -35,6 +35,16 @@ namespace csharp_crud_notepad
             return (int)_id;
         }
 
+        public string SetTitle(string newTitle)
+        {
+            return _title = newTitle;
+        }
+
+        public string SetName(string newName)
+        {
+            return _name = newName;
+        }
+
         public override string ToString()
         {
             return $"{_id} - {_date.ToString("yyyy/MM/dd")} - {_title} - {_name}";

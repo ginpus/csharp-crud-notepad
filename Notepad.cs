@@ -107,10 +107,19 @@ namespace csharp_crud_notepad
             }
         }
 
-        public void EditNote(Note note)
+        public void EditNote(int noteId)
         {
             //issaugoti indexa, is kur paimtas irasas
-            _notepad.Remove(note);
+            var note = _notepad.FirstOrDefault(x => x.GetId() == noteId);
+            if (note != null)
+            {
+                Console.Write("Insert new title: ");
+                var title = Console.ReadLine();
+                note.SetTitle(title);
+                Console.Write("Insert new name: ");
+                var name = Console.ReadLine();
+                note.SetName(name);
+            }
             File.WriteAllText(_fileName, ""); // deletes current contents from the file
             foreach (var entry in _notepad)
             {
