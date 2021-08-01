@@ -14,9 +14,8 @@ namespace csharp_crud_notepad
         Edit_note,
         Delete_note,
         Delete_all_notes,
-
-        //Create_backup,
-        //Restore_from_backup,
+        Create_backup,
+        Restore_from_backup,
         Exit
     }
 }

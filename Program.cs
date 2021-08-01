@@ -12,13 +12,14 @@ namespace csharp_crud_notepad
             var notepad = new Notepad();
             notepad.ImportNotes(); // taking all existen notes from the file and putting them into the object list
 
-            //-----------------------------------------------
-
             bool desire = true;
 
             while (desire)
             {
+                Console.WriteLine("\nPress any key to continue. ");
+                Console.ReadKey();
                 notepad.PrintAllSelections();
+                Console.WriteLine("\nSelect action: ");
                 var input = Console.ReadLine();
                 int choice = Convert.ToInt32(input);
 
@@ -42,7 +43,6 @@ namespace csharp_crud_notepad
                         Console.WriteLine("Select ID of note to edit: ");
                         var input2 = Console.ReadLine();
                         int idEdit = Convert.ToInt32(input2);
-                        //notepad.GetNoteById(idEdit);
                         notepad.EditNote(idEdit);
                         break;
 
@@ -59,44 +59,19 @@ namespace csharp_crud_notepad
                         notepad.DeleteAllNotes();
                         break;
 
-                    /*                    case 7:
-                                            notepad.CreateBackup();
-                                            break;
-
-                                        case 8:
-                                            Console.WriteLine("Restoring");
-                                            break;*/
-
                     case 7:
+                        notepad.CreateBackup();
+                        break;
+
+                    case 8:
+                        notepad.RestoreFromBackup();
+                        break;
+
+                    case 9:
                         Console.WriteLine("Closing notepad. Goodnight.");
                         desire = false;
                         break;
                 }
-
-                //----------------------------------
-                /*
-                                var user = new User
-                                {
-                                    UserName = "ginpus",
-                                    FullName = "Ponas Pusinskas",
-                                    Age = 18
-                                };
-
-                                File.AppendAllLines("users.txt", new[] { user.ToString() });
-
-                                //perrasyti Totring metoda, kad tam tikru formatu isaugotu
-
-                                var users = File.ReadAllLines("users.txt"); // stringa konvertuoti atgal i user modeli
-
-                                foreach (var usr in users)
-                                {
-                                    new User
-                                    {
-                                        UserName = "jadajada",
-                                        FullName = "Vardenis",
-                                        Age = 8
-                                    };
-                                }*/
             }
         }
     }

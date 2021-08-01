@@ -34,13 +34,14 @@ namespace csharp_crud_notepad
                 int tempId = Int32.Parse(temp[0].Trim());
                 DateTime tempDate = DateTime.Parse(temp[1].Trim());
                 Note entry = new Note(tempId, tempDate, temp[2].Trim(), temp[3].Trim()); //values gets assigned to Note constructor
-                _notepad.Add(entry);
+                _notepad.Add(entry); //evry created Note gets added to master notepad
             }
+            Console.Write("-> Notes loaded from the file");
         }
 
         public int GetMaxId()
         {
-            _savedNotes = File.ReadAllLines("notepad.txt");
+            _savedNotes = File.ReadAllLines("notepad.txt"); // this is based on the fact that what is saved is identical what is in memory
             _maxId = 0;
             foreach (var line in _savedNotes)
             {
@@ -57,21 +58,22 @@ namespace csharp_crud_notepad
         public void PrintNotes() // print all existing notes FROM FILE into console
         {
             _savedNotes = File.ReadAllLines("notepad.txt");
-            Console.WriteLine("Current notepad entries:");
+            Console.WriteLine("Current saved notepad entries:");
             foreach (var line in _savedNotes)
             {
                 Console.WriteLine(line);
             }
-            Console.WriteLine("------End of notes------");
+            Console.WriteLine("------End of notes------\n");
         }
 
         public void ShowNotes() // print existent notepad objects FROM NOTEPAD OBJECT LIST into console
         {
+            Console.WriteLine("Current active (in-memory) notepad entries:");
             foreach (var entry in _notepad)
             {
                 Console.WriteLine(entry.ToString());
             }
-            Console.WriteLine("------End of notes------");
+            Console.WriteLine("------End of notes------\n");
         }
 
         public void InsertNote() // ID will always be greater than current greatest one. Date will always be creation or modification date
@@ -80,9 +82,10 @@ namespace csharp_crud_notepad
             var title = Console.ReadLine();
             Console.Write("Note text: ");
             var name = Console.ReadLine();
-            _newNote = new Note(GetMaxId() + 1, title, name); // default ID gets assigned as defined in Note constructor
+            _newNote = new Note(GetMaxId() + 1, title, name); // disregards, if there are any gaps in numeration
             _notepad.Add(_newNote);
             File.AppendAllLines("notepad.txt", new[] { _newNote.ToString() });
+            Console.Write("-> New note inserted");
         }
 
         public Note GetNoteById(int id) // method to return Note object
@@ -105,6 +108,7 @@ namespace csharp_crud_notepad
             {
                 File.AppendAllLines("notepad.txt", new[] { entry.ToString() }); // rewrites all entries to the file
             }
+            Console.Write("-> Note deleted");
         }
 
         public void EditNote(int noteId)
@@ -125,12 +129,14 @@ namespace csharp_crud_notepad
             {
                 File.AppendAllLines("notepad.txt", new[] { entry.ToString() }); // rewrites all entries to the file
             }
+            Console.Write("-> Note modified");
         }
 
         public void DeleteAllNotes()
         {
             _notepad = new List<Note> { }; // deletes all entries from the notepad list
-            File.WriteAllText(_fileName, ""); // deletes the file contents
+            File.WriteAllText(_fileName, ""); // empties file contents
+            Console.Write("-> All notes deleted");
         }
 
         public void CreateBackup() // putting all the notes into backup
@@ -144,6 +150,7 @@ namespace csharp_crud_notepad
             {
                 File.AppendAllLines("notepad_backup.txt", new[] { entry.ToString() });
             }
+            Console.Write("-> Notepad emtries saved in backup");
         }
 
         public void RestoreFromBackup() // adding all notes from file into object
@@ -160,6 +167,7 @@ namespace csharp_crud_notepad
                 _notepad.Add(entry);
                 File.AppendAllLines("notepad.txt", new[] { entry.ToString() });
             }
+            Console.Write("-> Notepad emtries restored from backup");
         }
 
         public void PrintAllSelections()

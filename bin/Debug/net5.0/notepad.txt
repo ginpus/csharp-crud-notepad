@@ -4,5 +4,6 @@
 5 - 2021/08/01 - Dar vienas - Per metoda idetas irasas
 6 - 2021/08/01 - Idetas - Po trynimo
 7 - 2021/08/01 - Paeditintas title - paeditintas nameas
-9 - 2021/08/01 - Dar papildomas - Hahaha
-10 - 2021/08/01 - desimtas - desimtas
+10 - 2021/08/01 - Pakoreguotas - padarytas is "desimtas" i "Pakoreguotas"
+11 - 2021/08/01 - Vienuoliktas - pridetas
+12 - 2021/08/01 - Idetas po patrynimo - ir po pridejimo
