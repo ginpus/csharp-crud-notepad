@@ -46,7 +46,7 @@ namespace csharp_crud_notepad
 
         public int GetMaxId()
         {
-            _savedNotes = File.ReadAllLines(_fileNameJ); // this is based on the fact that what is saved is identical what is in memory
+            _savedNotes = File.ReadAllLines(_fileNameJ); // this is based on the fact that what is saved is identical what is in memory. REMAKE TO USE OBJECT LIST instead
             _maxId = 0;
             foreach (var line in _savedNotes)
             {
@@ -87,11 +87,11 @@ namespace csharp_crud_notepad
             string title = Console.ReadLine();
             Console.Write("Note text: ");
             string name = Console.ReadLine();
-            _newNote = new Note(GetMaxId() + 1, title, name); // disregards, if there are any gaps in numeration
+            _newNote = new Note(GetMaxId() + 1, title, name); // disregards, if there are any gaps in numeration. NENAUDOTI GERIAU
             _notepad.Add(_newNote); // inserting into object list
             string newJsonNote = JsonSerializer.Serialize<Note>(_newNote); //inserting into JSON file
             File.AppendAllLines(_fileNameJ, new[] { newJsonNote });
-            Console.Write($"-> New note inserted: \n{_newNote.ToString()}");
+            Console.Write($"-> New note inserted: \n{_newNote}");
             //Console.Write($"-> New note inserted: \n{_newNote.ToString()}\n{newJsonNote}");
         }
 

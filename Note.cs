@@ -10,7 +10,7 @@ namespace csharp_crud_notepad
 {
     internal class Note
     {
-        public int _id { get; set; }  // only with public and {get;set;} Json methods work
+        public int _id { get; set; }  // only with public and {get;set;} defined Json methods work
         public DateTime _date { get; set; }
         public string _title { get; set; }
         public string _name { get; set; }
@@ -23,7 +23,7 @@ namespace csharp_crud_notepad
             _name = name;
         }
 
-        public Note(int id, DateTime date, string title, string name) // extended constructor to be used for imported notes
+        public Note(int id, DateTime date, string title, string name) // extended constructor to be used for imported notes. NO LONGER USED with JSON methods applied
         {
             _id = id;
             _date = date;

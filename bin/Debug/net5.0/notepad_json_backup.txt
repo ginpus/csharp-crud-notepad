@@ -1,5 +1,4 @@
 {"_id":26,"_date":"2021-08-02T12:05:15.1506346+03:00","_title":"paeditintas","_name":"notelis"}
-{"_id":27,"_date":"2021-08-02T12:05:15.1506346+03:00","_title":"Jsone","_name":"issaugotas"}
-{"_id":28,"_date":"2021-08-02T16:23:08.4165358+03:00","_title":"Naujas","_name":"Note\u0027as"}
+{"_id":27,"_date":"2021-08-02T12:05:15.1506346+03:00","_title":"Jsone","_name":"paeditintas"}
 {"_id":29,"_date":"2021-08-02T16:23:46.9921268+03:00","_title":"note-as","_name":"su-bruksniais"}
 {"_id":30,"_date":"2021-08-02T16:45:31.4703194+03:00","_title":"New entry","_name":"Prior to backup"}

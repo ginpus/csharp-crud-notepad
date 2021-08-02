@@ -53,7 +53,7 @@ namespace csharp_crud_notepad
                         Console.WriteLine("Select ID of note to delete: ");
                         var input3 = Console.ReadLine();
                         int idDelete = Convert.ToInt32(input3);
-                        notepad.DeleteNote(notepad.GetNoteById(idDelete));
+                        notepad.DeleteNote(notepad.GetNoteById(idDelete)); // perdaryti
                         break;
 
                     case 6:
