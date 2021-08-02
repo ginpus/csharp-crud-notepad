@@ -4,15 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
+using System.Text.Json;
 
 namespace csharp_crud_notepad
 {
     internal class Note
     {
-        protected int _id;
-        protected DateTime _date;
-        protected string _title;
-        protected string _name;
+        public int _id { get; set; }
+        public DateTime _date { get; set; }
+        public string _title { get; set; }
+        public string _name { get; set; }
 
         public Note(int id, string title, string name)
         {
@@ -28,6 +29,10 @@ namespace csharp_crud_notepad
             _date = date;
             _title = title;
             _name = name;
+        }
+
+        public Note()
+        {
         }
 
         public int GetId() // returns ID of a note
