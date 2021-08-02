@@ -12,10 +12,13 @@ namespace csharp_crud_notepad
     internal class Notepad
     {
         public List<Note> _notepad { get; set; }
-        protected string _fileName = "notepad.txt";
+
+        //protected string _fileName = "notepad.txt";
         protected string _fileNameJ = "notepad_json.txt";
-        protected string _backupFileName = "notepad_backup.txt";
+
+        //protected string _backupFileName = "notepad_backup.txt";
         protected string _backupFileNameJ = "notepad_json_backup.txt";
+
         public string[] _savedNotes { get; set; }
         public string[] _backedNotes { get; set; }
         public Note _newNote { get; set; }
@@ -24,9 +27,9 @@ namespace csharp_crud_notepad
         public Notepad()
         {
             _notepad = new List<Note> { }; // creating of empty notepad to place note objects (entries)
-            if (!File.Exists(_fileName)) // if notepad file does not exit, it gets created
+            if (!File.Exists(_fileNameJ)) // if notepad file does not exit, it gets created
             {
-                File.Create(_fileName);
+                File.Create(_fileNameJ);
             }
         }
 
