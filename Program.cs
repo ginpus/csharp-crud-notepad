@@ -69,6 +69,10 @@ namespace csharp_crud_notepad
                         break;
 
                     case 9:
+                        notepad.PrintBackupNotes();
+                        break;
+
+                    case 10:
                         Console.WriteLine("Closing notepad. Goodnight.");
                         desire = false;
                         break;
